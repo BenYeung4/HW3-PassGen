@@ -1,34 +1,20 @@
 //Assignment code here  
 //different variable list
-var lowercaseList = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"] 
-var uppercaseList = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-var numberList = ["0","1","2","3","4","5","6","7","8","9"]
-var symbolList = ["~","!","@","#","$","%","^","&","=","+","?"]
+var lowercaseList = "abcdefghijklmnopqrstuvwxyz";
+var uppercaseList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numberList = "0123456789";
+var symbolList = "~!@#$%^&=+?][{}=-_+)(*&^%";
+var passwordLength ="";
 
-//function to randomize the input from the passwordCart
-function randomInt(min,max){
-  if(!max){
-    max = min
-    min = 0
-  }
-  var random = Math.random()
-  return Math.floor(min*(1 - random) + random*max)
-}
-
-function randomCart(list){
-  return list[randomInt(list.length)]
-}
 
 //creates the value and the only section that should be writtens
 function generatePassword(){  
 
   // a. password length 8 < 128
-  var promptInput= window.prompt('How many characters would you like the password to contain?  Please note: Minimum 8 and Max 128.');
- 
-  var passwordLength = promptInput;
-  
+  var passwordLength= window.prompt('How many characters would you like the password to contain?  Please note: Minimum 8 and Max 128.');
+
   //making sure that the number variable is within 8 - 128, if it is, then will prompt the tester for the critera.  if none was selected, then would return.
- if(promptInput >= 8 && promptInput <=128){
+ if(passwordLength>= 8 && passwordLength <=128){
 
    // a. Lowercases
     var promptLowercase = window.confirm("Would you like to include lowercase?");
@@ -45,36 +31,32 @@ function generatePassword(){
     return; 
   }
 
-  
- var passwordCart = []
+ //stores the type of arrays that the user decided to go with
+ var passwordCart = [];
 
   //if the tester inputed the critera, it will push out to the passwordCart with the list, this way we can forward to the loop, if nothing is selected, then will prompt the last if statement and return.
- if (promptLowercase === true){
-    passwordCart.push(lowercaseList)
+  if (promptLowercase === true){
+    passwordCart+=lowercaseList;
   }
  if (promptUppercase === true){
-    passwordCart.push(uppercaseList)
+    passwordCart+=uppercaseList;
   }
  if (promptNumbers === true){
-    passwordCart.push(numberList)
+    passwordCart+=numberList;
   }
  if (promptSymbol === true){
-    passwordCart.push(symbolList)
+    passwordCart+=symbolList;
   }
-
  if (passwordCart.length === 0){
    window.alert("Please select one of the criterias. Try again.");
   }
 
   //stores the password with the criteria
-  var generatedPassword = ""
-
+  var generatedPassword = "";
 
   //loop for the critera for the password until the passwordLength reaches 0
   for (var i = 0; i < passwordLength; i++){
-   var randomList = randomCart(passwordCart)
-   var randomChar = randomCart(randomList)
-   generatedPassword += randomChar
+    generatedPassword += passwordCart[Math.floor(Math.random() * passwordCart.length)];
   }
   
   //display password to the page, generated password will go here but write something afterwards
