@@ -22,6 +22,7 @@ This way, stating the user how many characters they would like.
 THEN I select which criteria to include in the password
 3.WHEN prompted for the length of the password
 THEN I choose a length of at least 8 characters and no more than 128 characters
+![prompt_input](https://user-images.githubusercontent.com/52897163/167065573-ae76a2be-f2a0-46e2-b279-5a7941462954.JPG)
 
 ![Getting Started](.images/prompt_input.JPG)
 -After the user inputs the numeric amount they would like within the 8 - 128 range, it would prompt the different criterias that was requested, under an IF statement.  If the user selected <8 or 128<, then the prompt would deny the request to move further and end the generation, under the else statement
@@ -36,26 +37,31 @@ else{
 THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
 
 -Below are the prompts for the confirmations or not to include the criteras that have been requested.  especially the else statement, when nothing is entered.  I've combined it with the passwordLength statement, this way to reduce the code and already stated the situation.
+![lowercase_prompt](https://user-images.githubusercontent.com/52897163/167065588-660052b5-7e97-4e2e-a359-1e0f0ed9a6d9.JPG)
 
 ![Getting Started](.images/lowercase_prompt.JPG)
 
  var promptLowercase = window.confirm("Would you like to include lowercase?");
 Selecting lowercase
+![uppercase_prompt](https://user-images.githubusercontent.com/52897163/167065600-28f71cda-febd-4610-8659-5b8adc71cca5.JPG)
 
 ![Getting Started](.images/uppercase_prompt.JPG)
 
 var promptUppercase = window.confirm("Would you like to include uppercase?");
 Selecting uppercase
+![numbers_prompt](https://user-images.githubusercontent.com/52897163/167065608-b7903ded-2255-4e5d-9cb3-125e6465d84a.JPG)
 
 ![Getting Started](.images/numbers_prompt.JPG)
 
 var promptNumbers = window.confirm("Would you like to include numbers?");
 Selecting numbers
+![characters_prompt](https://user-images.githubusercontent.com/52897163/167065610-398bea38-6847-47b8-a472-9451efadc53f.JPG)
 
 ![Getting Started](.images/characters_prompt.JPG)
 
  var promptSymbol = window.confirm("Would you like to include special characters?");
 Selecting characters
+![no_select_prompt](https://user-images.githubusercontent.com/52897163/167065618-77da2f27-7433-4b48-a361-54ff571880f9.JPG)
 
 ![Getting Started](.images/no_select_prompt.JPG)
 
@@ -72,6 +78,7 @@ var lowercaseList = "abcdefghijklmnopqrstuvwxyz";
 var uppercaseList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numberList = "0123456789";
 var symbolList = "~!@#$%^&=+?][{}=-_+)(*&^%";
+![array list](https://user-images.githubusercontent.com/52897163/167065630-ef47a0c6-83de-4710-9c20-e4f589871eed.JPG)
 
 -in order to keep track of the user's input, i did an if statement ===true, meaning that if they accept it, then the critera will be pushed into the array.  else, it would be ignored and not used.  If user doesn't select any critera, it would end the generator and show an alert, window.alert("Please select one of the criterias. Try again.");.  all as seen below.
 
