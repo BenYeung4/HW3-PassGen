@@ -16,7 +16,7 @@ function randomInt(min,max){
 }
 
 function randomCart(list){
-  return list[randomInt(0,list.length -1)]
+  return list[randomInt(list.length)]
 }
 
 //creates the value and the only section that should be writtens
