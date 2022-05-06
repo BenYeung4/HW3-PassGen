@@ -100,11 +100,3 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);  //listen to the button on the click and write the password, no need to touch
 
 
-   //only inputs number
-  //var passwordLength = parseInt(promptInput) 
-   
-  //if entered a non-numeric, empty, less than 8, more than 128, will not generate.
-  // if(isNaN(passwordLength) || passwordLength ===""|| passwordLength === null || passwordLength <8 || passwordLength > 128){
-  //   window.alert("Please provide a numeric value. Between 8 & 128. Try again.")
-  //   return
-  // } 
